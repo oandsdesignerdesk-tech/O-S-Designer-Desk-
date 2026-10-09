@@ -111,8 +111,7 @@ section{padding:82px 0}.section-head{max-width:660px;margin-bottom:34px}.kicker{
   <section class="contact" id="contact">
     <div class="wrap contact-grid">
       <div class="contact-copy"><div class="kicker">Get in touch</div><h2 style="font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.05em;margin:10px 0 14px">Have a business website in mind?</h2><p>Send us a few details. We can talk through your idea and the best next step for your business.</p>
-        <div class="contact-item"><div class="contact-symbol">✉</div><div><b>Email</b><small>Replace with your business email before publishing.</small></div></div>
-        <div class="contact-item"><div class="contact-symbol">☏</div><div><b>WhatsApp</b><small>Add your business WhatsApp number to enable direct enquiries.</small></div></div>
+        <div class="contact-item"><div class="contact-symbol">✉</div><div><b>Email</b><small><a href="mailto:oandsdesignerdesk@gmail.com">oandsdesignerdesk@gmail.com</a></small></div></div>
         <div class="contact-item"><div class="contact-symbol">⌖</div><div><b>Serving businesses online</b><small>Based in South Africa; remote enquiries welcome.</small></div></div>
       </div>
       <form class="contact-form" id="contactForm">
@@ -120,7 +119,7 @@ section{padding:82px 0}.section-head{max-width:660px;margin-bottom:34px}.kicker{
         <div class="field-row"><div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div><div class="field"><label for="service">What do you need?</label><select id="service" name="service"><option>New business website</option><option>Website redesign</option><option>Mobile-friendly improvements</option><option>Website updates / maintenance</option><option>Not sure yet</option></select></div></div>
         <div class="field"><label for="message">Tell us about your project *</label><textarea id="message" name="message" required placeholder="What does your business do, and what would you like your website to achieve?"></textarea></div>
         <button class="btn dark" type="submit">Prepare enquiry ↗</button>
-        <p class="form-note" id="formNote">This form opens your email app with your message ready to send. Add your real business email in the code first.</p>
+        <p class="form-note" id="formNote">When you submit, your email app opens with the enquiry ready to send to O&S Designer Desk.</p>
       </form>
     </div>
   </section>
@@ -128,8 +127,7 @@ section{padding:82px 0}.section-head{max-width:660px;margin-bottom:34px}.kicker{
 
 <footer class="footer"><div class="wrap footer-row"><div><b style="color:#fff">O&amp;S Designer Desk</b><div>Thoughtful websites for growing businesses.</div></div><div class="footer-links"><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a></div><div>© <span id="year"></span> O&amp;S Designer Desk</div></div></footer>
 <script>
-  // IMPORTANT: Replace this placeholder with your real business email before publishing.
-  const BUSINESS_EMAIL = "your-email@example.com";
+  const BUSINESS_EMAIL = "oandsdesignerdesk@gmail.com";
   const menuBtn = document.getElementById("menuBtn");
   const navlinks = document.getElementById("navlinks");
   menuBtn.addEventListener("click", () => {
@@ -143,10 +141,6 @@ section{padding:82px 0}.section-head{max-width:660px;margin-bottom:34px}.kicker{
   document.getElementById("year").textContent = new Date().getFullYear();
   document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    if (BUSINESS_EMAIL === "your-email@example.com") {
-      document.getElementById("formNote").textContent = "Before this form can send an enquiry, replace your-email@example.com in the code with your real business email address.";
-      return;
-    }
     const data = new FormData(this);
     const subject = encodeURIComponent("Website enquiry from " + data.get("name"));
     const body = encodeURIComponent(
@@ -154,7 +148,7 @@ section{padding:82px 0}.section-head{max-width:660px;margin-bottom:34px}.kicker{
       "\nReply email: " + data.get("email") + "\nService: " + data.get("service") +
       "\n\nProject details:\n" + data.get("message")
     );
-    window.location.href = "mailto:" + BUSINESS_EMAIL oandsdesignerdesk@gmail.com "?subject=" + subject + "&body=" + body;
+    window.location.href = "mailto:" + BUSINESS_EMAIL + "?subject=" + subject + "&body=" + body;
   });
 </script>
 </body>
